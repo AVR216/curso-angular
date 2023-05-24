@@ -7,6 +7,8 @@ import { ContadorComponent } from './contador/contador.component';
 import { BotonesComponent } from './botones/botones.component';
 import { FormularioComponent } from './formulario/formulario.component';
 import { BuclesComponent } from './bucles/bucles.component';
+import { FormTemplateComponent } from './form-template/form-template.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -14,11 +16,13 @@ import { BuclesComponent } from './bucles/bucles.component';
    ContadorComponent,
    BotonesComponent,
    FormularioComponent,
-   BuclesComponent
+   BuclesComponent,
+   FormTemplateComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

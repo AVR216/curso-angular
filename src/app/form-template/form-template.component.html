@@ -1,0 +1,37 @@
+<div class="card mx-auto mt-5" style="width: 25rem;">
+    <div class="card-body">
+        
+        <form (ngSubmit)="guardar()">
+
+            <!-- Nombre -->   
+            <div class="form-group">
+                <label>Nombre:</label>
+                <input type="text" 
+                    placeholder="Ingrese su nombre"
+                    class="form-control"
+                    [(ngModel)]="persona.nombre"
+                    name="nombre">
+            </div>
+        
+            <!-- Edad -->
+            <div class="form-group">
+                <label>Edad:</label>
+                <input type="number" 
+                    placeholder="Ingrese su edad"
+                    name="edad"
+                    class="form-control"
+                    min="18"
+                    [(ngModel)]="persona.edad">
+            </div>
+
+            <button class="btn btn-primary float-end mt-3">
+                Guardar
+            </button>
+
+        </form>
+
+    </div>
+</div>
+
+<hr>
+<pre> {{persona  | json }} </pre>

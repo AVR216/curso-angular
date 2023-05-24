@@ -1,1 +1,13 @@
-<p>bucles works!</p>
+
+<div class="my-container">
+    <div class="card" 
+     style="width: 18rem;"
+     *ngFor="let item of personas">
+    <div class="card-body">
+        <h3 class="card-title"> {{ item.nombre }} </h3>
+        <h5 class="card-text">
+            Age: {{ item.edad }}
+        </h5>
+    </div>
+</div>
+</div>
