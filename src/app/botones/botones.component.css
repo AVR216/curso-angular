@@ -1,0 +1,42 @@
+button {
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+}
+
+.hidden {
+    display: none;
+}
+
+p {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: medium;
+    font-weight: 500;
+}
+
+.btn-rojo {
+    background-color: red;
+    color: #fff;
+}
+
+.btn-verde {
+    background-color: green;
+    color: #fff;
+}
+
+.btn-azul {
+    background-color: blue;
+    color: #fff;
+}
+
+.txt-rojo {
+    color: #f00;
+}
+.txt-verde {
+    color: #0f0;
+}
+.txt-azul {
+    color: #00f;
+}

@@ -1,0 +1,11 @@
+.container {
+    padding: 0;
+}
+
+.container > button {
+    margin-right: 20px;
+}
+
+pre {
+    margin-left: 20px;
+}

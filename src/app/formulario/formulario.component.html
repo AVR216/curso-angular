@@ -1,0 +1,20 @@
+<input  type="text" 
+        placeholder="Ingrese su nombre"
+        class="form-control"
+        #name>
+
+<button class="btn btn-primary my-2"
+        (click)="mostrarEnConsola(name.value)">
+    Mostrar en consola
+</button>
+
+<div class="alert alert-primary my-2"
+     *ngIf="nombre.trim().length > 0; else withoutMessage">
+    Se ha enviado el siguiente nombre: <<{{ nombre }}>>
+</div>
+
+<ng-template #withoutMessage>
+    <div class="alert alert-danger">
+        No hay nombre para mostrar
+    </div>
+</ng-template>
