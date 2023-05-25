@@ -8,7 +8,8 @@ import { BotonesComponent } from './botones/botones.component';
 import { FormularioComponent } from './formulario/formulario.component';
 import { BuclesComponent } from './bucles/bucles.component';
 import { FormTemplateComponent } from './form-template/form-template.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormReactiveComponent } from './form-reactive/form-reactive.component';
 
 @NgModule({
   declarations: [
@@ -17,12 +18,14 @@ import { FormsModule } from '@angular/forms';
    BotonesComponent,
    FormularioComponent,
    BuclesComponent,
-   FormTemplateComponent
+   FormTemplateComponent,
+   FormReactiveComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

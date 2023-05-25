@@ -1,7 +1,11 @@
+<div *ngIf="miFormulario">
+
+</div>
+
 <div class="card mx-auto mt-5" style="width: 25rem;">
     <div class="card-body">
         
-        <form (ngSubmit)="guardar()">
+        <form (ngSubmit)="guardar()" #miFormulario="ngForm">
 
             <!-- Nombre -->   
             <div class="form-group">
@@ -10,7 +14,22 @@
                     placeholder="Ingrese su nombre"
                     class="form-control"
                     [(ngModel)]="persona.nombre"
-                    name="nombre">
+                    name="nombre"
+                    required
+                    minlength="5"
+                    #name="ngModel">
+
+                <!-- Mensaje de validación para valor requerido -->
+                <div *ngIf="(name?.errors?.['required'] && name.touched) || (name.touched && name.value.trim().length < 1)"
+                        class="alert alert-danger mt-2">
+                    El nombre es obligatorio, no puede estar vacío
+                </div>
+
+                 <!-- Mensaje de validación para longitud del nombre -->
+                <div *ngIf="(name?.errors?.['minlength'] && name.touched)"
+                        class="alert alert-danger mt-2">
+                    El nombre debe tener una longitud mínimo de 5 carácteres
+                </div>
             </div>
         
             <!-- Edad -->
@@ -20,11 +39,26 @@
                     placeholder="Ingrese su edad"
                     name="edad"
                     class="form-control"
+                    [(ngModel)]="persona.edad"
+                    required
                     min="18"
-                    [(ngModel)]="persona.edad">
+                    #age="ngModel">
+                
+                <!-- Mensaje para valor de edad requerido -->
+                <div *ngIf="age?.errors?.['required'] && age.touched"
+                        class="alert alert-danger mt-2">
+                    La edad es obligatoria
+                </div>
+
+                <!-- Mensaje para valor minimo de edad -->
+                <div *ngIf="age?.errors?.['min'] && age.touched"
+                        class="alert alert-danger mt-2">
+                    La edad debe ser mínimo de 18 años
+                </div>
             </div>
 
-            <button class="btn btn-primary float-end mt-3">
+            <button class="btn btn-primary float-end mt-3"
+                    [disabled]="miFormulario.invalid">
                 Guardar
             </button>
 
@@ -34,4 +68,5 @@
 </div>
 
 <hr>
-<pre> {{persona  | json }} </pre>
+<pre> Valor: {{ miFormulario.value | json }} </pre>
+<pre> Valid: {{ miFormulario.valid | json }} </pre>
