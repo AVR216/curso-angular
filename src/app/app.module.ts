@@ -10,6 +10,9 @@ import { BuclesComponent } from './bucles/bucles.component';
 import { FormTemplateComponent } from './form-template/form-template.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormReactiveComponent } from './form-reactive/form-reactive.component';
+import { ChildrenComponent } from './children/children.component';
+import { AddMessagesComponent } from './add-messages/add-messages.component';
+import { ListMessagesComponent } from './list-messages/list-messages.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,10 @@ import { FormReactiveComponent } from './form-reactive/form-reactive.component';
    FormularioComponent,
    BuclesComponent,
    FormTemplateComponent,
-   FormReactiveComponent
+   FormReactiveComponent,
+   ChildrenComponent,
+   AddMessagesComponent,
+   ListMessagesComponent
   ],
   imports: [
     BrowserModule,

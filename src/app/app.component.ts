@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'curso_angular';
+
+  handleEvent( event: string ) {
+    this.title = event;
+  }
 }

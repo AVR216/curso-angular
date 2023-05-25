@@ -1,0 +1,12 @@
+<div class="my-4" style="width: 15rem;">
+    <ul class="list-group">
+        <li *ngFor="let message of messagesList; let i = index"
+            class="list-group-item">
+            {{message}}
+            <button class="btn btn-danger float-end"
+                    (click)="delete( i )">
+                x
+            </button> 
+        </li>
+    </ul>
+</div>
